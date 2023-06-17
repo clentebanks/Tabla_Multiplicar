@@ -1,0 +1,38 @@
+body{
+    background:linear-gradient(#8093F1 , #B388EB);
+}
+h1{
+    color: #fff;
+}
+h2{
+    color: wheat;
+}
+h4{
+    color: #fff;
+}
+p{
+    color:#fff;
+    font-size: 1.2rem;
+}
+label{
+    color: #fff;
+}
+#num{
+    border: none;
+}
+.btnMulti{
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #0b5ed7;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btnText{
+    font-size: 1.3rem;
+}
