@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <main>
+        <section class="container" style="text-align: center; margin-bottom: 150px; margin-top: 50px;">
+            <H1 class="text-primary">Hola Alana</H1>
+            <h2 class="text-primary">Bienvenida</h2>
+            <h4 class="text-info">Empiece a estudiar las tablas de multiplicar</h4>
+            <p class="text-info">Seleccione la tabla a estudiar escribiendo en el espacio el numero de la tabla a estudiar</p>
+            <label for="num">Introduce un número: </label>
+            <input type="text" name="" id="num"  placeholder="Ejemplo 5" >
+
+            <button onclick="multi()">MULTIPLICACIÓN</button>
+
+            <p id="multi" style="font-size: 1.8rem;"></p>
+        </section>
+
+        <section class="container" style="text-align: center; margin-bottom: 200px;">
+            <!--APP: The HTML Side-->
+        <div id="app" class="container-fluid">
+            <!--Welcome-->
+            <h2 class="text-primary">{{welcome}}</h2>
+            <h4 class="text-info">{{description}}</h4>
+            <p class="text-info">Haz clic en empezar cuando estés listo!</p>
+            <!--Botón para iniciar el juego-->
+            <button class="btn btn-primary" 
+                    v-on:click="begin"
+                    :disabled="operations.length>0 && operations.length < maxRounds">{{cmdBegin_text}}</button>
+            <hr>
+            <!-- UI Principal del juego -->
+            <table class="table table-sm-center table-bordered table-hover text-sm">
+                <tr>
+                    <th v-for="item in opHeaders" class="text-center">{{item}}</th>
+                </tr>
+                <tr v-for="operation in operations">
+                    <td class="text-center" style="white-space: nowrap;">{{operation.question}}</td>
+                    <td class="text-center"><button :disabled="!operation.active" v-on:click="checkResponse(operation, operation.op1)" class="btn btn-sm btn-warning text-center" style="width: 3.5em"><span>{{operation.op1}}</span></button></td>
+                    <td class="text-center"><button :disabled="!operation.active" v-on:click="checkResponse(operation, operation.op2)" class="btn btn-sm btn-warning text-center" style="width: 3.5em">{{operation.op2}}</button></td>
+                    <td class="text-center"><button :disabled="!operation.active" v-on:click="checkResponse(operation, operation.op3)" class="btn btn-sm btn-warning text-center" style="width: 3.5em">{{operation.op3}}</button></td>
+                    <td class="text-center"><span class="text-center" style="width: 10em">{{operation.result}}</span></td>
+                </tr>
+            </table>
+            <!-- Resumen de resultados -->
+            <div>
+                <button type="button" class="btn btn-primary" style="margin:5px">
+                    <span class="badge badge-light">{{totalTries}} </span> Intentos
+                </button>
+                <button type="button" class="btn btn-danger" style="margin:5px">
+                    <span class="badge badge-light">{{totalErrors}} </span> Errores
+                </button>
+                <button type="button" class="btn btn-info" style="margin:5px">
+                    <span class="badge badge-light">{{totalTries > 0 ? ((1-(totalErrors/totalTries))*100).toFixed(2): 0}}  % </span> Efectividad
+                </button>      
+                <button type="button" class="btn btn-info" style="margin:5px">
+                    <span class="badge badge-light">{{(averageTimeMs/1000).toFixed(2)}}seg.</span> Tiempo Promedio
+                </button>                    
+                <h4 class="text-primary">{{finalResultMessage}}</h4>
+            </div>
+        </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script src="/scripts.js" ></script>
+</body>
+</html>
