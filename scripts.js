@@ -19,7 +19,7 @@ var myObject = new Vue({
         welcome: '¡Bienvenido al juego de las Tablas de Multiplicar!',
         description: 'Conforme aparecen las operaciones deberás escoger la respuesta correcta haciendo click sobre el numero. Tu misión es responder en el menor tiempo posible.',
         opHeaders: ["Reto", "(a)", "(b)", "(c)", "Tiempo"],
-        cmdBegin_text: "Empezar",
+        cmdBegin_text: "Empezar a Jugar",
         operations: [],
         maxRounds: 10,
         totalTries: 0,

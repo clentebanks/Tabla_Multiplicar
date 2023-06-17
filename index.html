@@ -22,15 +22,15 @@
 
             <p id="multi" style="font-size: 1.8rem;"></p>
             <script type="text/javascript">
-                function reFresh(){
-                location.reload(true)
-                }
-                /* Establece el tiempo 1 minuto = 60000 milliseconds. */
-                window.setInterval("reFresh()",300000);
-                // -->
-                </script>
-            <input class="btn btn-primary" type="boton" value="Borrar" onclick="javascript:window.location.reload();"/>
-        </section>
+                    function reFresh(){
+                    location.reload(true)
+                    }
+                    /* Establece el tiempo 1 minuto = 60000 milliseconds. */
+                    window.setInterval("reFresh()",300000);
+                    // -->
+                    </script>
+                <input class="btn btn-primary" type="boton" value="Borrar" onclick="javascript:window.location.reload();"/>   
+            </script>
         </section>
 
         <section class="container" style="text-align: center; margin-bottom: 200px;">
@@ -58,6 +58,16 @@
                     <td class="text-center"><span class="text-center" style="width: 10em">{{operation.result}}</span></td>
                 </tr>
             </table>
+            <script type="text/javascript">
+                function reFresh(){
+                location.reload(true)
+                }
+                /* Establece el tiempo 1 minuto = 60000 milliseconds. */
+                window.setInterval("reFresh()",300000);
+                // -->
+                </script>
+            <input class="btn btn-primary mt-md-5 mb-md-5" type="boton" value="Empezar de nuevo" onclick="javascript:window.location.reload();"/>   
+        </script>
             <!-- Resumen de resultados -->
             <div>
                 <button type="button" class="btn btn-primary" style="margin:5px">
