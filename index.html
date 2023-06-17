@@ -21,6 +21,16 @@
             <button onclick="multi()">MULTIPLICACIÓN</button>
 
             <p id="multi" style="font-size: 1.8rem;"></p>
+            <script type="text/javascript">
+                function reFresh(){
+                location.reload(true)
+                }
+                /* Establece el tiempo 1 minuto = 60000 milliseconds. */
+                window.setInterval("reFresh()",300000);
+                // -->
+                </script>
+            <input class="btn btn-primary" type="boton" value="Borrar" onclick="javascript:window.location.reload();"/>
+        </section>
         </section>
 
         <section class="container" style="text-align: center; margin-bottom: 200px;">
